@@ -3,5 +3,5 @@
 Creating website to display my project
 
 # build-setting
-theme: hacker
+theme: minima
 
