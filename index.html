@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
+        /* Regular navigation styles */
+        .menu-btn {
+            display: none;  /* Hidden by default */
+        }
+
+        .overlay {
+            display: none;  /* Hidden by default */
+        }
+
         .nav-content {
             display: flex;
             justify-content: space-between;
@@ -23,9 +32,65 @@
             margin: 0;
             padding: 0;
         }
-        
-        .nav-links li {
-            margin: 0;
+
+        /* Mobile styles */
+        @media screen and (max-width: 768px) {
+            .menu-btn {
+                display: block;
+                cursor: pointer;
+                position: fixed;
+                top: 1rem;
+                left: 1rem;
+                z-index: 1000;
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            .nav-content {
+                position: fixed;
+                left: -250px;
+                top: 0;
+                height: 100vh;
+                width: 250px;
+                background-color: #333;
+                transition: 0.3s;
+                z-index: 999;
+                margin: 0;
+            }
+
+            .nav-content.active {
+                left: 0;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                padding-top: 60px;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .nav-links a {
+                color: white;
+                display: block;
+                padding: 1rem 2rem;
+            }
+
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 998;
+            }
+
+            .overlay.active {
+                display: block;
+            }
         }
 
         .hero {
@@ -55,6 +120,9 @@
     </style>
 </head>
 <body>
+    <div class="menu-btn">☰</div>
+    <div class="overlay"></div>
+
     <nav>
         <div class="nav-content">
             <ul class="nav-links">
@@ -245,5 +313,29 @@
     <footer>
         <p>&copy; 2024 Shahil Manoj Dhotre. All rights reserved.</p>
     </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const nav = document.querySelector('.nav-content');
+        const overlay = document.querySelector('.overlay');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html> 
