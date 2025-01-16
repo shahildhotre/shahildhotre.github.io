@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahil Manoj Dhotre - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            margin: 0;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-content a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-content a:hover {
+            color: #333;
+        }
+
+        footer p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#travel">Travel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Hi, I'm <span class="highlight">Shahil Manoj Dhotre</span></h1>
+            <h2 style="text-align: center;">I'm a Machine Learning Engineer with experience in AI/ML model optimization, Agentic systems, and Computer vision.</h2>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content" style="text-align: center;">
+            <p> I'm interested in optimizing AI/ML models for faster inference and developing agentic systems for complex tasks. I also like traveling and exploring new places.</p>
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul style="display: inline-block; text-align: left;">
+                    <li>Programming Languages: Python, C++, Object Oriented Programming, CUDA, LLVM</li>
+                    <li>ML & Data: LLM, Prompting, PyTorch, TensorFlow, Diffusion, Gen AI, CNN, Transformers, OpenCV, LangGraph, LangChain, RAG, LORA</li>
+                    <li>System Skills: Computer Architecture, Code Generation, Compiler Optimization, GPU Programming, Git</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>GenAI Research Volunteer - NC State</h3>
+                <p>November 2024 - Present</p>
+                <ul>
+                    <li>Optimizing Semantic Segmentation Models for faster inference and improve performance by 30% using ONNX and TensorRT</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Gen AI Engineer - CHIMA</h3>
+                <p>July 2024 - November 2024</p>
+                <ul>
+                    <li>Developed backend code in Python to design a multimodal system that generates product images using <bold>diffusion</bold> models.</li>
+                    <li>Optimized diffusion pipelines using PyTorch 2, achieving up to 3x inference speedup with techniques such as <bold>torch.compile, reduced precision (bfloat16), and dynamic quantization</bold>.</li>
+                    <li>Implemented advanced optimizations like <bold>SDPA, fused QKV projections, and convolution-to-linear</bold> layer conversion to reduce latency while maintaining output quality.</li>
+                    <li>Integrated AI-generated images with Image-to-Video models to animate product footage and create high-quality, engaging marketing campaign videos at 30 frames per second (FPS).</li>
+                    <li>Utilized Claude for prompts to ensure consistency in characters, visual styles, and camera angles throughout the videos.</li>
+                    <li>Built a robust agentic video editing pipeline using <bold>Python, LangGraph, Text-to-Image, Image-to-Video, and Text-to-Audio models</bold>, enabling conversational editing of generated videos.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Compiler Optimization [LLVM]</h3>
+                <p>
+                    • Utilized parser generators Flex & Bison to implement and generate IR of the language syntax & grammar for bitwise operations<br>
+                    • Optimized the generated LLVM IR code using:<br>
+                    &nbsp;&nbsp;- Dead Code<br>
+                    &nbsp;&nbsp;- Common Sub Expression elimination<br>
+                    &nbsp;&nbsp;- Memory to Register pass<br>
+                    • Reduced the number of instructions by 40%
+                </p>
+                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+            <div class="project-card">
+                <h3>GPU Kernel Optimization [CUDA]</h3>
+                <p>
+                    • Developed CUDA kernel for parallel vector summation achieving 30μs baseline performance<br>
+                    • Implemented optimization techniques including:<br>
+                    &nbsp;&nbsp;- Shared memory utilization<br>
+                    &nbsp;&nbsp;- Warp divergence minimization<br>
+                    &nbsp;&nbsp;- Memory coalescing<br>
+                    &nbsp;&nbsp;- Thread block optimization<br>
+                    • Achieved 5x speedup with final execution time of 6μs
+                </p>
+                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+            <div class="project-card">
+                <h3>Image Classification Model Inference [TensorRT]</h3>
+                <p>
+                    • Developed a ResNet-18 model to perform classification on a CUDA-enabled device for CIFAR-10 Dataset using PyTorch models for inference, achieving a high Frames Per Second (FPS) rate of 314.59.<br>
+                    • Implemented FP16 precision for PyTorch models, significantly improving inference speed to 1208.93 FPS.<br>
+                    • Converted PyTorch model to TensorRT, to achieve remarkable inference speed, with an FPS rate of 4716.63 at FP16.
+                </p>
+                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+            <div class="project-card">
+                <h3>Microprocessor Architecture [C++, Memory Hierarchy]</h3>
+                <p>
+                    • Designed a 2-level cache & memory simulator having a prefetch unit with LRU replacement & Write Back Write Allocate policy<br>
+                    • Performed profiling on different memory configurations and studied their performance on miss rate and Average Access time
+                </p>
+                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+            <div class="project-card">
+                <h3>GPU Matrix Multiplication Optimization [CUDA, Tensor Core]</h3>
+                <p>
+                    • Developed a naive CUDA kernel for matrix multiplication, achieving an execution time of 500 microseconds for 1024x1024<br>
+                    • Optimized the kernel using shared memory tiling, and memory coalescing, reducing execution time to 150 microseconds while minimizing warp divergence and improving GPU utilization<br>
+                    • Integrated Tensor Cores with mixed precision (FP16/FP32) using CUTLASS, achieving a final execution time of 50 microseconds, representing a 10x improvement over the baseline
+                </p>
+                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+            <div class="project-card">
+                <h3>Image Classification - Vision Transformer [PyTorch, Transformer]</h3>
+                <p>
+                    • Engineered a Vision Transformer (ViT) model with PyTorch, incorporating Pre-Layer Normalization (Pre-LN) activation that achieved a 68% accuracy rate on the CIFAR-10 benchmark, outperforming a baseline enhanced MLP model by 12%<br>
+                    • Leveraged techniques such as multi-head attention and learned positional embeddings using PyTorch
+                </p>
+                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="other-experience">
+        <h2>Other Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>Software Engineer Intern - Toshiba Global Commerce Solutions</h3>
+                <p>May 2023 - April 2024</p>
+                <ul>
+                    <li>Developed a Python script using Pandas and Regex to process 100+ CSV files, consolidating data into a single manageable CSV file for enhanced accessibility.</li>
+                    <li>Tested multi-image classification model deployed on Edge Device to detect, decode, and classify barcodes.</li>
+                    <li>Developed REST APIs to trigger inter-processor communication and implemented CURL commands.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Software Engineer - ElasticRun (NTex Transportation Pvt Ltd)</h3>
+                <p>January 2021 - July 2022</p>
+                <ul>
+                    <li>Developed and maintained an ML-based sales forecasting system achieving 70-80% accuracy using Time Series Algorithms (ETS, SARIMA, and CNN-Quantile Regression) with Python backend and Git version control.</li>
+                    <li>Collaborated with DevOps team to deploy ML models on Azure for scaling and serverless training, reducing production training time from 14 to 6 hours for 5000 statistical ML models.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content" style="text-align: center;">
+            <p>Get in touch with me at:</p>
+            <a href="mailto:shahildhotre1902@gmail.com">shahildhotre1902@gmail.com</a>
+            <a href="https://www.linkedin.com/in/shahildhotre/">LinkedIn</a>
+        </div>
+    </section>
+
+    <section id="travel">
+        <h2>Travel</h2>
+        <div class="travel-content" style="text-align: center;">
+            <p>I love traveling and exploring new places. Here are some of the places I have visited:</p>
+            
+            <h3>India</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>Mumbai • Pune • Hubli</li>
+                <li>Manali • Amritsar • Dharamshala</li>
+                <li>Kashmir (Srinagar, Gulmarg, Pahalgam)</li>
+            </ul>
+            
+            <h3>United States</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>Raleigh • Charlotte • Nashville • Ashville</li>
+                <li>Smoky Mountains • Blue Ridge • Blacksburg</li>
+                <li>Savannah • Hilton Head • Jacksonville</li>
+                <li>Miami • Daytona Beach</li>
+                <li>Austin • San Antonio • Houston</li>
+                <li>San Francisco • Bay Area</li>
+            </ul>
+            
+            <p><em>Cool photos coming soon!</em></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Shahil Manoj Dhotre. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
