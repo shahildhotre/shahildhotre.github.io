@@ -187,16 +187,24 @@
         <h2>Projects</h2>
         <div class="project-grid">
             <div class="project-card">
-                <h3>Compiler Optimization [LLVM]</h3>
+                <h3>Code Generation - Compiler [LLVM IR]</h3>
                 <p>
-                    • Utilized parser generators Flex & Bison to implement and generate IR of the language syntax & grammar for bitwise operations<br>
-                    • Optimized the generated LLVM IR code using:<br>
-                    &nbsp;&nbsp;- Dead Code Elimination<br>
-                    &nbsp;&nbsp;- Common Subexpression Elimination<br>
-                    &nbsp;&nbsp;- Memory-to-Register Pass<br>
-                    • Reduced the number of instructions by 40%
+                    • FrontEnd: Utilized Flex to scan the source code and identify tokens, including keywords, identifiers, operators, and punctuation, ensuring accurate tokenization for downstream parsing<br>
+                    • Leveraged Bison to parse the tokenized input, resolved the ambiguity in the parsing tree using left parsing, and constructed abstract syntax trees (ASTs)<br>
+                    • Generated LLVM Intermediate Representation (IR) for efficient handling of bitwise operations
                 </p>
-                <!-- <a href="#" class="btn">View Details</a> -->
+            </div>
+            <div class="project-card">
+                <h3>Compiler Optimization [LLVM IR]</h3>
+                <p>
+                    • MiddleEnd: Designed and implemented an advanced LLVM-based optimization framework<br>
+                    • Implemented optimization passes including:<br>
+                    &nbsp;&nbsp;- Global Common Subexpression Elimination (CSE)<br>
+                    &nbsp;&nbsp;- Memory-to-Register promotion<br>
+                    &nbsp;&nbsp;- Dead Code Elimination (DCE)<br>
+                    • Leveraged LLVM APIs and Dominator Tree analysis to identify and eliminate redundant instructions<br>
+                    • Achieved a 40% reduction in instructions while generating optimized LLVM bitcode
+                </p>
             </div>
             <div class="project-card">
                 <h3>GPU Kernel Optimization [CUDA]</h3>
